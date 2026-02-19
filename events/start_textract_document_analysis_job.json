@@ -1,0 +1,38 @@
+{
+    "Records": [
+        {
+            "eventVersion": "2.1",
+            "eventSource": "aws:s3",
+            "awsRegion": "us-east-1",
+            "eventTime": "2026-02-19T14: 33: 23.253Z",
+            "eventName": "ObjectCreated:Put",
+            "userIdentity": {
+                "principalId": "AWS:AIDA6K3XERSDT56MWEU67"
+            },
+            "requestParameters": {
+                "sourceIPAddress": "103.75.193.47"
+            },
+            "responseElements": {
+                "x-amz-request-id": "X2QR21WQ3H0QWWA0",
+                "x-amz-id-2": "t/FEU+e0fXtXAN9kgQpCQ8xF+IddbbICCAGRGualtqHdsQIP0qGsAM0zCMalKY7AQr40oVpH4X/NsGEm4WQblEKEsjHpH2Fl"
+            },
+            "s3": {
+                "s3SchemaVersion": "1.0",
+                "configurationId": "07d73a80-278a-4fa9-b32c-663c594511ac",
+                "bucket": {
+                    "name": "rpa-uploaded-invoices",
+                    "ownerIdentity": {
+                        "principalId": "A3VQZAYKK029T2"
+                    },
+                    "arn": "arn:aws:s3: : :rpa-uploaded-invoices"
+                },
+                "object": {
+                    "key": "June-23+%2810%29.pdf",
+                    "size": 580802,
+                    "eTag": "c107cbe455f026cf88aa22049b84c4ef",
+                    "sequencer": "0069971F3324AD9F86"
+                }
+            }
+        }
+    ]
+}
