@@ -4,9 +4,12 @@ import os
 import boto3
 
 client = boto3.client("textract")
-from dotenv import load_dotenv
 
-load_dotenv()
+
+if os.getenv("AWS_LAMBDA_FUNCTION_NAME") is None:
+    from dotenv import load_dotenv
+
+    load_dotenv()
 
 
 def lambda_handler(event, context):
@@ -18,10 +21,10 @@ def lambda_handler(event, context):
     print(f"{bucket=}")
     print(f"{key=}")
 
-    SNS_TOPIC_ARN_DOCUMENT_ANALYSIS_COMPLETED = os.getenv(
+    SNS_TOPIC_ARN_DOCUMENT_ANALYSIS_COMPLETED = os.environ[
         "SNS_TOPIC_ARN_DOCUMENT_ANALYSIS_COMPLETED"
-    )
-    TEXTRACT_ROLE_ARN = os.getenv("TEXTRACT_ROLE_ARN")
+    ]
+    TEXTRACT_ROLE_ARN = os.environ["TEXTRACT_ROLE_ARN"]
 
     document_location = {"S3Object": {"Bucket": bucket, "Name": key}}
     response = client.start_document_analysis(
